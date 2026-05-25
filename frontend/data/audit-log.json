@@ -1,0 +1,116 @@
+[
+  {
+    "id": "audit-1779649028263",
+    "at": "5/24/2026, 2:57:08 PM",
+    "area": "ai-tools",
+    "action": "Feature surface updated"
+  },
+  {
+    "id": "audit-1779649028079",
+    "at": "5/24/2026, 2:57:08 PM",
+    "area": "ai-tools",
+    "action": "Entity records updated"
+  },
+  {
+    "id": "audit-1779648811608",
+    "at": "5/24/2026, 2:53:31 PM",
+    "area": "expenses",
+    "action": "Approved record: Airfare reimbursement"
+  },
+  {
+    "id": "audit-1779648811582",
+    "at": "5/24/2026, 2:53:31 PM",
+    "area": "expenses",
+    "action": "Entity records updated"
+  },
+  {
+    "id": "audit-1779648773286",
+    "at": "5/24/2026, 2:52:53 PM",
+    "area": "Documents",
+    "action": "Documents workspace updated"
+  },
+  {
+    "id": "audit-1779648725510",
+    "at": "5/24/2026, 2:52:05 PM",
+    "area": "Documents",
+    "action": "Documents workspace updated"
+  },
+  {
+    "id": "audit-1779648725134",
+    "at": "5/24/2026, 2:52:05 PM",
+    "area": "Documents",
+    "action": "Uploaded file: Erol_Akarsu_Resume_Extended.pdf"
+  },
+  {
+    "id": "audit-1779648691498",
+    "at": "5/24/2026, 2:51:31 PM",
+    "area": "documents",
+    "action": "Feature surface updated"
+  },
+  {
+    "id": "audit-1779648691483",
+    "at": "5/24/2026, 2:51:31 PM",
+    "area": "Documents",
+    "action": "Documents workspace updated"
+  },
+  {
+    "id": "audit-1779648660904",
+    "at": "5/24/2026, 2:51:00 PM",
+    "area": "Documents",
+    "action": "Documents workspace updated"
+  },
+  {
+    "id": "audit-1779648660899",
+    "at": "5/24/2026, 2:51:00 PM",
+    "area": "documents",
+    "action": "Feature surface updated"
+  },
+  {
+    "id": "audit-1779648402055",
+    "at": "5/24/2026, 2:46:42 PM",
+    "area": "budgeting",
+    "action": "Feature surface updated"
+  },
+  {
+    "id": "audit-1779648392560",
+    "at": "5/24/2026, 2:46:32 PM",
+    "area": "forecasting",
+    "action": "Feature surface updated"
+  },
+  {
+    "id": "audit-1779648388581",
+    "at": "5/24/2026, 2:46:28 PM",
+    "area": "statements",
+    "action": "Feature surface updated"
+  },
+  {
+    "id": "audit-1779648380529",
+    "at": "5/24/2026, 2:46:20 PM",
+    "area": "reporting",
+    "action": "Feature surface updated"
+  },
+  {
+    "id": "audit-1779648315386",
+    "at": "5/24/2026, 2:45:15 PM",
+    "area": "Documents",
+    "action": "Uploaded file: finance-upload-XXXX.txt"
+  },
+  {
+    "id": "audit-seed-1",
+    "at": "2026-05-24 08:15",
+    "area": "Expenses",
+    "action": "Synthetic receipt alert created"
+  },
+  {
+    "id": "audit-seed-2",
+    "at": "2026-05-24 09:10",
+    "area": "Reporting",
+    "action": "Board package review assigned"
+  },
+  {
+    "id": "audit-seed-3",
+    "at": "2026-05-24 11:40",
+    "area": "Tax Prep",
+    "action": "IRS response packet opened"
+  }
+]

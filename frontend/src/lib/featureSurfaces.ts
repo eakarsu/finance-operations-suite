@@ -1,0 +1,334 @@
+export type FeatureSurfaceRow = {
+  id: string;
+  item: string;
+  status: string;
+  owner: string;
+  nextStep: string;
+};
+
+export type FeatureSurface = {
+  workItems: FeatureSurfaceRow[];
+  quickActions: string[];
+  controlChecks: Array<{ id: string; label: string; done: boolean }>;
+  activityLog: Array<{ id: string; message: string; at: string }>;
+};
+
+export const featureSurfaces: Record<string, FeatureSurface> = {
+  Reporting: {
+    workItems: [
+      { id: 'reporting-1', item: 'Q2 board reporting package', status: 'In review', owner: 'Controller', nextStep: 'Issue after CFO signoff' },
+      { id: 'reporting-2', item: 'Daily KPI export set', status: 'Queued', owner: 'Finance Ops', nextStep: 'Refresh source metrics' },
+      { id: 'reporting-3', item: 'Budget vs actual variance packet', status: 'Exception', owner: 'FP&A Lead', nextStep: 'Resolve missing regional data' },
+    ],
+    quickActions: ['Run executive pack', 'Export scheduled reports', 'Open variance analysis'],
+    controlChecks: [
+      { id: 'reporting-check-1', label: 'All statement inputs reconciled', done: false },
+      { id: 'reporting-check-2', label: 'Board pack approvals captured', done: true },
+      { id: 'reporting-check-3', label: 'Export recipients validated', done: false },
+    ],
+    activityLog: [
+      { id: 'reporting-log-1', message: 'Board package review assigned to Controller', at: '2026-05-24 09:10' },
+      { id: 'reporting-log-2', message: 'Daily KPI export refreshed', at: '2026-05-24 11:40' },
+    ],
+  },
+  Statements: {
+    workItems: [
+      { id: 'statements-1', item: 'April close statement package', status: 'Draft', owner: 'Accounting', nextStep: 'Complete disclosure notes' },
+      { id: 'statements-2', item: 'Cash flow statement QA', status: 'Review', owner: 'Assistant Controller', nextStep: 'Validate indirect method adjustments' },
+      { id: 'statements-3', item: 'Quarter-end support binder', status: 'Ready', owner: 'Close Manager', nextStep: 'Release to audit archive' },
+    ],
+    quickActions: ['Assemble package', 'Compare prior period', 'Publish close packet'],
+    controlChecks: [
+      { id: 'statements-check-1', label: 'Trial balance locked', done: true },
+      { id: 'statements-check-2', label: 'Disclosure checklist complete', done: false },
+      { id: 'statements-check-3', label: 'Controller review assigned', done: true },
+    ],
+    activityLog: [
+      { id: 'statements-log-1', message: 'Close package moved to review', at: '2026-05-24 08:30' },
+      { id: 'statements-log-2', message: 'Support binder prepared for archive', at: '2026-05-24 12:05' },
+    ],
+  },
+  Forecasting: {
+    workItems: [
+      { id: 'forecasting-1', item: 'North America revenue forecast', status: 'Active', owner: 'FP&A Analyst', nextStep: 'Review pipeline assumptions' },
+      { id: 'forecasting-2', item: 'Scenario downside model', status: 'Queued', owner: 'Strategy', nextStep: 'Apply margin sensitivity' },
+      { id: 'forecasting-3', item: 'Variance explainer deck', status: 'Needs attention', owner: 'Finance Ops', nextStep: 'Resolve product mix gap' },
+    ],
+    quickActions: ['Run scenario model', 'Generate variance explainer', 'Open revenue trend'],
+    controlChecks: [
+      { id: 'forecasting-check-1', label: 'Base assumptions approved', done: true },
+      { id: 'forecasting-check-2', label: 'Scenario owner assigned', done: true },
+      { id: 'forecasting-check-3', label: 'Variance thresholds current', done: false },
+    ],
+    activityLog: [
+      { id: 'forecasting-log-1', message: 'Scenario downside model queued', at: '2026-05-24 10:15' },
+      { id: 'forecasting-log-2', message: 'Variance explainer flagged for review', at: '2026-05-24 13:05' },
+    ],
+  },
+  Budgeting: {
+    workItems: [
+      { id: 'budgeting-1', item: 'Marketing budget submission', status: 'Pending approval', owner: 'Dept Head', nextStep: 'Controller signoff' },
+      { id: 'budgeting-2', item: 'Travel freeze variance review', status: 'Exception', owner: 'Finance Ops', nextStep: 'Escalate over-threshold spend' },
+      { id: 'budgeting-3', item: 'Department forecast refresh', status: 'Open', owner: 'FP&A', nextStep: 'Push revised staffing inputs' },
+    ],
+    quickActions: ['Approve department budget', 'Open budget holds', 'Review actual vs plan'],
+    controlChecks: [
+      { id: 'budgeting-check-1', label: 'Budget owners current', done: true },
+      { id: 'budgeting-check-2', label: 'Approval matrix enforced', done: false },
+      { id: 'budgeting-check-3', label: 'Threshold policies synchronized', done: true },
+    ],
+    activityLog: [
+      { id: 'budgeting-log-1', message: 'Department budget queued for signoff', at: '2026-05-24 09:55' },
+      { id: 'budgeting-log-2', message: 'Variance review escalated to Finance Ops', at: '2026-05-24 12:20' },
+    ],
+  },
+  Valuation: {
+    workItems: [
+      { id: 'valuation-1', item: 'Expansion DCF model', status: 'In progress', owner: 'Corporate Finance', nextStep: 'Finalize discount rate' },
+      { id: 'valuation-2', item: 'Break-even scenario pack', status: 'Review', owner: 'Strategy', nextStep: 'Validate fixed-cost assumptions' },
+      { id: 'valuation-3', item: 'Capex request assessment', status: 'Queued', owner: 'Treasury', nextStep: 'Link cash flow projections' },
+    ],
+    quickActions: ['Open DCF model', 'Run sensitivity range', 'Prepare investment memo'],
+    controlChecks: [
+      { id: 'valuation-check-1', label: 'Discount rate source documented', done: false },
+      { id: 'valuation-check-2', label: 'Scenario assumptions versioned', done: true },
+      { id: 'valuation-check-3', label: 'Decision committee assigned', done: false },
+    ],
+    activityLog: [
+      { id: 'valuation-log-1', message: 'DCF model moved into sensitivity review', at: '2026-05-24 08:50' },
+    ],
+  },
+  'Audit & Compliance': {
+    workItems: [
+      { id: 'audit-1', item: 'Expense policy breach review', status: 'Open finding', owner: 'Internal Audit', nextStep: 'Request remediation evidence' },
+      { id: 'audit-2', item: 'Collections compliance log', status: 'Review', owner: 'Compliance Lead', nextStep: 'Validate outreach controls' },
+      { id: 'audit-3', item: 'Quarterly audit trail export', status: 'Ready', owner: 'Finance Ops', nextStep: 'Deliver to audit portal' },
+    ],
+    quickActions: ['Open finding queue', 'Export audit trail', 'Run compliance scan'],
+    controlChecks: [
+      { id: 'audit-check-1', label: 'Evidence links attached', done: false },
+      { id: 'audit-check-2', label: 'Remediation owner assigned', done: true },
+      { id: 'audit-check-3', label: 'Retention policy met', done: true },
+    ],
+    activityLog: [
+      { id: 'audit-log-1', message: 'Compliance scan completed for collections controls', at: '2026-05-24 11:15' },
+    ],
+  },
+  'Tax Prep': {
+    workItems: [
+      { id: 'taxprep-1', item: 'Corporate return 2025', status: 'Assembling', owner: 'Tax Manager', nextStep: 'Complete K-1 intake review' },
+      { id: 'taxprep-2', item: 'IRS notice response', status: 'Urgent', owner: 'Tax Associate', nextStep: 'Prepare response packet' },
+      { id: 'taxprep-3', item: 'Engagement letter release', status: 'Pending signature', owner: 'CPA Ops', nextStep: 'Send to client' },
+    ],
+    quickActions: ['Open return queue', 'Check missing documents', 'Release filing package'],
+    controlChecks: [
+      { id: 'taxprep-check-1', label: 'Source docs complete', done: false },
+      { id: 'taxprep-check-2', label: 'Reviewer assigned', done: true },
+      { id: 'taxprep-check-3', label: 'Client authorization on file', done: false },
+    ],
+    activityLog: [
+      { id: 'taxprep-log-1', message: 'IRS notice tagged urgent', at: '2026-05-24 08:40' },
+      { id: 'taxprep-log-2', message: 'Corporate return package opened', at: '2026-05-24 10:25' },
+    ],
+  },
+  'Tax Planning': {
+    workItems: [
+      { id: 'taxplanning-1', item: 'Estimated tax update - Q3', status: 'Open', owner: 'Tax Advisor', nextStep: 'Refresh income assumptions' },
+      { id: 'taxplanning-2', item: 'Multi-state planning case', status: 'Review', owner: 'Senior CPA', nextStep: 'Validate apportionment inputs' },
+      { id: 'taxplanning-3', item: 'Scenario comparison memo', status: 'Draft', owner: 'Planning Analyst', nextStep: 'Finalize recommendation' },
+    ],
+    quickActions: ['Run tax scenario', 'Update estimated tax', 'Prepare advisory memo'],
+    controlChecks: [
+      { id: 'taxplanning-check-1', label: 'Client assumptions current', done: true },
+      { id: 'taxplanning-check-2', label: 'State rules updated', done: false },
+      { id: 'taxplanning-check-3', label: 'Scenario recommendation reviewed', done: false },
+    ],
+    activityLog: [
+      { id: 'taxplanning-log-1', message: 'Estimated tax case refreshed for Q3', at: '2026-05-24 09:35' },
+    ],
+  },
+  Expenses: {
+    workItems: [
+      { id: 'expenses-1', item: 'Airfare reimbursement batch', status: 'Needs review', owner: 'Expense Auditor', nextStep: 'Check policy mismatch' },
+      { id: 'expenses-2', item: 'Synthetic receipt alert', status: 'High risk', owner: 'Fraud Analyst', nextStep: 'Escalate to manager' },
+      { id: 'expenses-3', item: 'Vendor duplicate charge check', status: 'Queued', owner: 'AP Controls', nextStep: 'Verify merchant history' },
+    ],
+    quickActions: ['Approve expense batch', 'Open fraud alerts', 'Review travel policy queue'],
+    controlChecks: [
+      { id: 'expenses-check-1', label: 'Receipt attached', done: false },
+      { id: 'expenses-check-2', label: 'Budget code assigned', done: true },
+      { id: 'expenses-check-3', label: 'Policy rule evaluated', done: false },
+    ],
+    activityLog: [
+      { id: 'expenses-log-1', message: 'Synthetic receipt alert created', at: '2026-05-24 08:15' },
+      { id: 'expenses-log-2', message: 'Travel policy queue reopened', at: '2026-05-24 11:55' },
+    ],
+  },
+  'Policies & Approvals': {
+    workItems: [
+      { id: 'policies-1', item: 'Regional spend exception', status: 'Approval pending', owner: 'Controller', nextStep: 'Approve or reject exception' },
+      { id: 'policies-2', item: 'Over-budget software renewal', status: 'Escalated', owner: 'Finance Director', nextStep: 'Confirm funding source' },
+      { id: 'policies-3', item: 'Department approval backlog', status: 'Open', owner: 'Finance Ops', nextStep: 'Reassign stalled requests' },
+    ],
+    quickActions: ['Approve exceptions', 'Reassign backlog', 'View threshold breaches'],
+    controlChecks: [
+      { id: 'policies-check-1', label: 'Approver hierarchy current', done: true },
+      { id: 'policies-check-2', label: 'Exception note captured', done: false },
+      { id: 'policies-check-3', label: 'Policy version referenced', done: true },
+    ],
+    activityLog: [
+      { id: 'policies-log-1', message: 'Budget threshold breach escalated', at: '2026-05-24 10:05' },
+    ],
+  },
+  Collections: {
+    workItems: [
+      { id: 'collections-1', item: 'Enterprise debtor segment A', status: 'Campaign active', owner: 'Collections Manager', nextStep: 'Review response rate' },
+      { id: 'collections-2', item: 'High-risk hardship queue', status: 'Open', owner: 'Recovery Analyst', nextStep: 'Propose outreach path' },
+      { id: 'collections-3', item: 'Dispute follow-up batch', status: 'Queued', owner: 'Collections Ops', nextStep: 'Send adjusted notice' },
+    ],
+    quickActions: ['Open debtor queue', 'Launch campaign', 'Review risk-ranked accounts'],
+    controlChecks: [
+      { id: 'collections-check-1', label: 'Regulatory template used', done: true },
+      { id: 'collections-check-2', label: 'Risk score current', done: false },
+      { id: 'collections-check-3', label: 'Contact cadence approved', done: true },
+    ],
+    activityLog: [
+      { id: 'collections-log-1', message: 'High-risk hardship queue opened', at: '2026-05-24 09:50' },
+      { id: 'collections-log-2', message: 'Campaign response rate dropped below target', at: '2026-05-24 12:40' },
+    ],
+  },
+  'Payments & Settlements': {
+    workItems: [
+      { id: 'payments-1', item: 'Installment plan review', status: 'Negotiation', owner: 'Collector', nextStep: 'Update payment schedule' },
+      { id: 'payments-2', item: 'Settlement offer package', status: 'Pending decision', owner: 'Recovery Lead', nextStep: 'Approve settlement terms' },
+      { id: 'payments-3', item: 'Dispute resolution set', status: 'Open', owner: 'Compliance', nextStep: 'Validate documentation' },
+    ],
+    quickActions: ['Approve payment plan', 'Model settlement terms', 'Resolve dispute'],
+    controlChecks: [
+      { id: 'payments-check-1', label: 'Affordability check completed', done: false },
+      { id: 'payments-check-2', label: 'Settlement authority verified', done: true },
+      { id: 'payments-check-3', label: 'Supporting docs attached', done: false },
+    ],
+    activityLog: [
+      { id: 'payments-log-1', message: 'Settlement package queued for approval', at: '2026-05-24 11:05' },
+    ],
+  },
+  Documents: {
+    workItems: [
+      { id: 'documents-1', item: 'IRS response evidence packet', status: 'Draft', owner: 'Tax Ops', nextStep: 'Add supporting schedules' },
+      { id: 'documents-2', item: 'Expense audit binder', status: 'Review', owner: 'Internal Audit', nextStep: 'Confirm policy attachments' },
+      { id: 'documents-3', item: 'Board reporting archive', status: 'Ready', owner: 'Finance Ops', nextStep: 'Publish to vault' },
+    ],
+    quickActions: ['Create document packet', 'Check missing evidence', 'Publish archive bundle'],
+    controlChecks: [
+      { id: 'documents-check-1', label: 'Retention label applied', done: true },
+      { id: 'documents-check-2', label: 'Owner assigned', done: true },
+      { id: 'documents-check-3', label: 'Supporting files linked', done: false },
+    ],
+    activityLog: [
+      { id: 'documents-log-1', message: 'Evidence packet draft created', at: '2026-05-24 08:05' },
+    ],
+  },
+  Integrations: {
+    workItems: [
+      { id: 'integrations-1', item: 'ERP nightly sync', status: 'Healthy', owner: 'Platform Ops', nextStep: 'Monitor next run' },
+      { id: 'integrations-2', item: 'Tax source credential refresh', status: 'Warning', owner: 'Admin', nextStep: 'Rotate expiring token' },
+      { id: 'integrations-3', item: 'Collections email connector', status: 'Open issue', owner: 'Platform Ops', nextStep: 'Reconnect SMTP integration' },
+    ],
+    quickActions: ['Open sync health', 'Reconnect source', 'Review connector warnings'],
+    controlChecks: [
+      { id: 'integrations-check-1', label: 'Credentials rotated', done: false },
+      { id: 'integrations-check-2', label: 'Last sync verified', done: true },
+      { id: 'integrations-check-3', label: 'Failure alert routing configured', done: true },
+    ],
+    activityLog: [
+      { id: 'integrations-log-1', message: 'Connector warning raised for tax source', at: '2026-05-24 10:10' },
+    ],
+  },
+  'Custom Views': {
+    workItems: [
+      { id: 'views-1', item: 'Controller close queue', status: 'Pinned', owner: 'Controller', nextStep: 'Refresh monthly view' },
+      { id: 'views-2', item: 'Tax notice worklist', status: 'Shared', owner: 'Tax Ops', nextStep: 'Adjust due-date filter' },
+      { id: 'views-3', item: 'Collections high-risk slice', status: 'Draft', owner: 'Recovery Manager', nextStep: 'Publish to team' },
+    ],
+    quickActions: ['Create saved view', 'Publish team view', 'Refresh pinned queue'],
+    controlChecks: [
+      { id: 'views-check-1', label: 'Role visibility applied', done: true },
+      { id: 'views-check-2', label: 'Owner documented', done: false },
+      { id: 'views-check-3', label: 'Filter logic reviewed', done: true },
+    ],
+    activityLog: [
+      { id: 'views-log-1', message: 'Shared tax notice view updated', at: '2026-05-24 09:25' },
+    ],
+  },
+  Profiles: {
+    workItems: [
+      { id: 'profiles-1', item: 'Controller role review', status: 'Open', owner: 'Admin', nextStep: 'Confirm approval scope' },
+      { id: 'profiles-2', item: 'Collections ownership rebalance', status: 'Queued', owner: 'Ops Lead', nextStep: 'Reassign inactive queue' },
+      { id: 'profiles-3', item: 'Tax team access audit', status: 'Review', owner: 'Security Admin', nextStep: 'Remove stale permissions' },
+    ],
+    quickActions: ['Review role matrix', 'Reassign ownership', 'Open access audit'],
+    controlChecks: [
+      { id: 'profiles-check-1', label: 'Role mapping current', done: true },
+      { id: 'profiles-check-2', label: 'Ownership coverage complete', done: false },
+      { id: 'profiles-check-3', label: 'Access exceptions documented', done: false },
+    ],
+    activityLog: [
+      { id: 'profiles-log-1', message: 'Access audit opened for tax team', at: '2026-05-24 12:00' },
+    ],
+  },
+  'AI Assistant': {
+    workItems: [
+      { id: 'ai-assistant-1', item: 'Tax planning advisory prompt set', status: 'Active', owner: 'Tax Advisor', nextStep: 'Review generated memo' },
+      { id: 'ai-assistant-2', item: 'Expense audit escalation prompts', status: 'Open', owner: 'Audit Analyst', nextStep: 'Resolve flagged outputs' },
+      { id: 'ai-assistant-3', item: 'Collections support Q&A history', status: 'Review', owner: 'Recovery Ops', nextStep: 'Tag reusable answers' },
+    ],
+    quickActions: ['Open advisor prompts', 'Review escalated answers', 'Save response template'],
+    controlChecks: [
+      { id: 'ai-assistant-check-1', label: 'Prompt owner assigned', done: true },
+      { id: 'ai-assistant-check-2', label: 'Escalation threshold set', done: true },
+      { id: 'ai-assistant-check-3', label: 'Audit trail retained', done: false },
+    ],
+    activityLog: [
+      { id: 'ai-assistant-log-1', message: 'Advisor memo prompt generated', at: '2026-05-24 11:10' },
+    ],
+  },
+  'AI Tools': {
+    workItems: [
+      { id: 'ai-tools-1', item: 'Forecast generator batch', status: 'Running', owner: 'FP&A', nextStep: 'Validate scenario outputs' },
+      { id: 'ai-tools-2', item: 'Expense categorization pass', status: 'Review', owner: 'Expense Auditor', nextStep: 'Approve category corrections' },
+      { id: 'ai-tools-3', item: 'Collections prioritization model', status: 'Ready', owner: 'Recovery Lead', nextStep: 'Apply to debtor queue' },
+    ],
+    quickActions: ['Run AI forecast', 'Approve AI categorization', 'Open model results'],
+    controlChecks: [
+      { id: 'ai-tools-check-1', label: 'Model owner set', done: true },
+      { id: 'ai-tools-check-2', label: 'Output review required', done: false },
+      { id: 'ai-tools-check-3', label: 'Override trail preserved', done: true },
+    ],
+    activityLog: [
+      { id: 'ai-tools-log-1', message: 'Forecast generator batch started', at: '2026-05-24 07:50' },
+      { id: 'ai-tools-log-2', message: 'Collections prioritization model ready', at: '2026-05-24 12:25' },
+    ],
+  },
+};
+
+export const featureSurfaceBySlug: Record<string, FeatureSurface> = {
+  reporting: featureSurfaces.Reporting,
+  statements: featureSurfaces.Statements,
+  forecasting: featureSurfaces.Forecasting,
+  budgeting: featureSurfaces.Budgeting,
+  valuation: featureSurfaces.Valuation,
+  'audit-compliance': featureSurfaces['Audit & Compliance'],
+  'tax-prep': featureSurfaces['Tax Prep'],
+  'tax-planning': featureSurfaces['Tax Planning'],
+  expenses: featureSurfaces.Expenses,
+  'policies-approvals': featureSurfaces['Policies & Approvals'],
+  collections: featureSurfaces.Collections,
+  'payments-settlements': featureSurfaces['Payments & Settlements'],
+  documents: featureSurfaces.Documents,
+  integrations: featureSurfaces.Integrations,
+  'custom-views': featureSurfaces['Custom Views'],
+  profiles: featureSurfaces.Profiles,
+  'ai-assistant': featureSurfaces['AI Assistant'],
+  'ai-tools': featureSurfaces['AI Tools'],
+};

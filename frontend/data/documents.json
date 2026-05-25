@@ -1,0 +1,48 @@
+[
+  {
+    "id": "doc-1779648725133",
+    "name": "Erol_Akarsu_Resume_Extended.pdf",
+    "type": "General Finance",
+    "owner": "Finance",
+    "status": "Uploaded",
+    "updatedAt": "5/24/2026, 2:52:05 PM",
+    "fileName": "Erol_Akarsu_Resume_Extended.pdf",
+    "storagePath": "1779648725133-Erol_Akarsu_Resume_Extended.pdf",
+    "sizeBytes": 281507
+  },
+  {
+    "id": "doc-1779648315361",
+    "name": "finance-upload-XXXX.txt",
+    "type": "Board Report",
+    "owner": "Finance Operator",
+    "status": "Uploaded",
+    "updatedAt": "5/24/2026, 2:45:15 PM",
+    "fileName": "finance-upload-XXXX.txt",
+    "storagePath": "1779648315355-finance-upload-XXXX.txt",
+    "sizeBytes": 18
+  },
+  {
+    "id": "doc-1",
+    "name": "Q2 Board Package",
+    "type": "Board Report",
+    "owner": "Controller",
+    "status": "In review",
+    "updatedAt": "2026-05-24 10:00"
+  },
+  {
+    "id": "doc-2",
+    "name": "Corporate Return 2025",
+    "type": "Tax Return",
+    "owner": "Tax Manager",
+    "status": "Assembling",
+    "updatedAt": "2026-05-24 11:20"
+  },
+  {
+    "id": "doc-3",
+    "name": "Expense Audit Binder",
+    "type": "Audit Binder",
+    "owner": "Internal Audit",
+    "status": "Ready",
+    "updatedAt": "2026-05-24 09:35"
+  }
+]

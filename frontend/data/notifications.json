@@ -1,0 +1,20 @@
+[
+  {
+    "id": "note-1",
+    "title": "Expense risk spike",
+    "detail": "Three new high-risk expense items need review.",
+    "read": false
+  },
+  {
+    "id": "note-2",
+    "title": "Tax deadline approaching",
+    "detail": "Corporate return package due in 2 days.",
+    "read": false
+  },
+  {
+    "id": "note-3",
+    "title": "Collections campaign updated",
+    "detail": "Segment A outreach cadence changed.",
+    "read": true
+  }
+]
